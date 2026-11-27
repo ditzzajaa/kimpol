@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kuis Latihan PSAS Informatika Kelas IX</title>
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--tx:#1b2430;--mu:#5d6b7c;--pr:#2457d6;--ok:#16794a;--okb:#e0f5ea;--no:#b3261e;--nob:#fde8e6;--bd:#d5dce6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10151c;--card:#1a212b;--tx:#e8edf3;--mu:#9aa8b8;--pr:#6c93f5;--ok:#5fd39a;--okb:#16352a;--no:#ff8a80;--nob:#3a1d1b;--bd:#2d3846}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}
+.w{max-width:680px;margin:0 auto;padding:16px}
+.c{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:20px;margin-top:12px}
+h1{font-size:1.35rem;margin:0 0 6px}.mu{color:var(--mu);font-size:.9rem}
+.bar{height:8px;background:var(--bd);border-radius:6px;overflow:hidden;margin-top:8px}.bar i{display:block;height:100%;background:var(--pr);width:0;transition:width .3s}
+.sec{font-size:.8rem;font-weight:600;color:var(--pr);text-transform:uppercase;letter-spacing:.04em}
+.q{font-size:1.05rem;margin:8px 0 12px;white-space:pre-wrap}
+pre{background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:10px;overflow-x:auto;font-size:.88rem;margin:0 0 12px}
+.o{display:flex;gap:10px;align-items:flex-start;width:100%;text-align:left;background:var(--card);color:var(--tx);border:1.5px solid var(--bd);border-radius:10px;padding:10px 12px;margin-bottom:8px;font:inherit;cursor:pointer}
+.o b{min-width:1.4em}.o.s{border-color:var(--pr);background:var(--bg)}
+.o.ok{border-color:var(--ok);background:var(--okb)}.o.no{border-color:var(--no);background:var(--nob)}.o:disabled{cursor:default}
+.b{background:var(--pr);color:#fff;border:0;border-radius:10px;padding:11px 20px;font:inherit;font-weight:600;cursor:pointer}.b:disabled{opacity:.45;cursor:not-allowed}
+.fb{margin-top:6px;padding:12px;border-radius:10px;font-weight:600}.fb.ok{background:var(--okb);color:var(--ok)}.fb.no{background:var(--nob);color:var(--no)}
+input{width:100%;padding:10px;border:1.5px solid var(--bd);border-radius:10px;font:inherit;background:var(--card);color:var(--tx);margin:12px 0}
+.big{font-size:2.6rem;font-weight:700;color:var(--pr)}
+</style></head><body><div class="w" id="app"></div>
+<script>
+const Q=[
+["A. Struktur Data Tree dan Graph","Struktur data tree biasanya digunakan untuk menggambarkan ....",["Data yang selalu berbentuk angka","Hubungan data secara bertingkat atau hierarki","Data yang tersusun secara acak tanpa hubungan","Proses penjumlahan bilangan"],1],
+["A. Struktur Data Tree dan Graph","Dalam struktur data tree, hubungan antara simpul induk dengan simpul anak disebut ....",["Edge","Root","Parent-child","Vertex"],2],
+["A. Struktur Data Tree dan Graph","Dalam struktur data graph, istilah vertex memiliki arti ....",["Garis penghubung","Simpul atau titik","Akar pohon","Daun pohon"],1],
+["A. Struktur Data Tree dan Graph","Struktur folder pada komputer:\n- Folder Dokumen\n- Folder Tugas di dalam Dokumen\n- Folder Informatika di dalam Tugas\n\nStruktur data yang sesuai untuk menggambarkan susunan tersebut adalah ....",["Graph","Tree","Queue","Stack"],1],
+["A. Struktur Data Tree dan Graph","Dalam struktur tree, simpul yang memiliki satu atau lebih anak disebut ....",["Leaf","Parent","Root saja","Edge"],1],
+["A. Struktur Data Tree dan Graph","Sebuah jaringan komputer memiliki lima komputer yang saling terhubung. Setiap komputer dapat terhubung dengan beberapa komputer lainnya. Struktur data yang tepat untuk menggambarkannya adalah ....",["Tree","Graph","Array","Stack"],1],
+["A. Struktur Data Tree dan Graph","Struktur tree berikut:\n- A adalah root.\n- A memiliki anak B dan C.\n- B memiliki anak D dan E.\n- C memiliki anak F dan G.\n\nJumlah seluruh node dalam tree tersebut adalah ....",["5","6","7","8"],2],
+["A. Struktur Data Tree dan Graph","Hubungan berikut:\n- A terhubung dengan B dan C.\n- B terhubung dengan D.\n- C terhubung dengan D.\n- D terhubung dengan E.\n\nMengapa struktur data graph lebih tepat digunakan untuk menggambarkan hubungan tersebut?",["Karena setiap simpul hanya memiliki satu anak","Karena hubungan antarsimpul dapat saling terhubung dan membentuk hubungan silang","Karena semua simpul harus memiliki induk","Karena graph hanya memiliki satu root"],1],
+["B. Analisis Data Excel (CHOOSE, INDEX, MATCH)","Jika seseorang ingin memilih salah satu dari beberapa pilihan berdasarkan nomor urut, fungsi Excel yang digunakan adalah ....",["SUM","CHOOSE","AVERAGE","COUNT"],1],
+["B. Analisis Data Excel (CHOOSE, INDEX, MATCH)","Hasil dari rumus berikut adalah ....",["Merah","Kuning","Hijau","Biru"],2,'=CHOOSE(3;"Merah";"Kuning";"Hijau";"Biru")'],
+["B. Analisis Data Excel (CHOOSE, INDEX, MATCH)","Fungsi MATCH menghasilkan informasi berupa ....",["Nilai tertinggi dalam tabel","Posisi data yang dicari dalam suatu rentang","Jumlah seluruh data","Rata-rata data"],1],
+["B. Analisis Data Excel (CHOOSE, INDEX, MATCH)","Perhatikan tabel (kolom A: Nama, kolom B: Nilai, baris 2-4). Jika menggunakan rumus =INDEX(B2:B4;3), hasilnya adalah ....",["85","90","75","Sinta"],2,'Nama   | Nilai\nRina   | 85\nBudi   | 90\nSinta  | 75'],
+["B. Analisis Data Excel (CHOOSE, INDEX, MATCH)","Jika Sinta berada pada urutan ketiga dalam rentang A2:A5, hasil rumus berikut adalah ....",["0","1","3","5"],2,'=MATCH("Sinta";A2:A5;0)'],
+["B. Analisis Data Excel (CHOOSE, INDEX, MATCH)","Perhatikan tabel (kolom A-C, baris 2-5). Jika menggunakan rumus =INDEX(C2:C5;4), hasilnya adalah ....",["4.000","2.500","3.000","1.500"],3,'Kode | Nama Barang | Harga\nP01  | Buku        | 4.000\nP02  | Pulpen      | 2.500\nP03  | Penggaris   | 3.000\nP04  | Penghapus   | 1.500'],
+["B. Analisis Data Excel (CHOOSE, INDEX, MATCH)","Seorang petugas ingin mencari nama barang berdasarkan kode barang yang dimasukkan pada sel E2. Kode berada di A2:A6 dan nama barang di B2:B6. Rumus yang tepat adalah ....",["=INDEX(B2:B6;MATCH(E2;A2:A6;0))","=SUM(A2:A6)","=AVERAGE(B2:B6)","=CHOOSE(E2;B2:B6)"],0],
+["B. Analisis Data Excel (CHOOSE, INDEX, MATCH)","Nama siswa yang dicari ditulis pada sel E2. Rumus untuk menampilkan nilai siswa tersebut adalah ....",["=MATCH(E2;C2:C5;0)","=INDEX(C2:C5;MATCH(E2;B2:B5;0))","=SUM(B2:B5)","=CHOOSE(E2;C2:C5)"],1,'No. | Nama Siswa | Nilai   (baris 2-5)\n1   | Andi       | 80\n2   | Budi       | 85\n3   | Citra      | 90\n4   | Deni       | 75'],
+["C. Algoritma dan Flowchart Percabangan","Tujuan utama membuat algoritma sebelum menulis program adalah ....",["Memperindah tampilan komputer","Mempermudah penyelesaian masalah secara terstruktur","Memperbesar ukuran program","Menghapus data komputer"],1],
+["C. Algoritma dan Flowchart Percabangan","Simbol flowchart berbentuk oval digunakan untuk menunjukkan ....",["Proses","Keputusan","Mulai dan selesai","Input dan output"],2],
+["C. Algoritma dan Flowchart Percabangan","Simbol jajar genjang pada flowchart digunakan untuk menunjukkan ....",["Input dan output","Proses perhitungan","Pengambilan keputusan","Awal program"],0],
+["C. Algoritma dan Flowchart Percabangan","Seorang guru menentukan bahwa siswa mendapat predikat baik jika nilai minimal 80. Jika siswa memperoleh nilai 85, hasil keputusan adalah ....",["Tidak baik","Baik","Tidak lulus","Mengulang"],1],
+["C. Algoritma dan Flowchart Percabangan","Jika umur yang dimasukkan adalah 15, hasil algoritma berikut adalah ....",["Boleh membuat SIM","Belum cukup umur","Umur salah","Program error"],1,'1. Masukkan umur.\n2. Jika umur >= 17, tampilkan "Boleh membuat SIM".\n3. Jika tidak, tampilkan "Belum cukup umur".'],
+["C. Algoritma dan Flowchart Percabangan","Dalam membuat flowchart menghitung luas segitiga, setelah memasukkan alas dan tinggi, langkah selanjutnya adalah ....",["Menampilkan hasil","Menghitung luas dengan rumus alas × tinggi ÷ 2","Mengakhiri program","Menghapus nilai alas"],1],
+["C. Algoritma dan Flowchart Percabangan","Jika suhu adalah 28, hasil yang ditampilkan algoritma berikut adalah ....",["Panas","Normal","Dingin","Tidak diketahui"],1,'- Jika suhu >= 35, tampilkan "Panas".\n- Jika suhu >= 25, tampilkan "Normal".\n- Selain itu, tampilkan "Dingin".'],
+["C. Algoritma dan Flowchart Percabangan","Sebuah program menentukan apakah suatu bilangan positif, negatif, atau nol. Jika bilangan yang dimasukkan adalah -8, kondisi yang harus terpenuhi adalah ....",["Bilangan > 0","Bilangan == 0","Bilangan < 0","Bilangan >= 0"],2],
+["D. Python Sederhana","Penulisan teks atau kalimat dalam Python harus diapit menggunakan ....",["Tanda kurung siku","Tanda petik","Tanda kurung kurawal","Tanda garis miring"],1],
+["D. Python Sederhana","Perintah Python yang digunakan untuk menerima masukan nama pengguna adalah ....",['print("Nama")','input("Masukkan nama: ")','type("Nama")','int("Nama")'],1],
+["D. Python Sederhana","Variabel umur memiliki tipe data ....",["String","Boolean","Integer","Float"],2,'umur = 14'],
+["D. Python Sederhana","Hasil yang ditampilkan program berikut adalah ....",["3","4","8","48"],0,'x = 12\ny = 4\nhasil = x / y\nprint(hasil)'],
+["D. Python Sederhana","Hasil yang ditampilkan program berikut adalah ....",["Lulus","Remedial","60","Error"],1,'nilai = 60\n\nif nilai >= 75:\n    print("Lulus")\nelse:\n    print("Remedial")'],
+["D. Python Sederhana","Operator * dalam bahasa Python digunakan untuk ....",["Penjumlahan","Pengurangan","Perkalian","Pembagian"],2],
+["D. Python Sederhana","Hasil program berikut adalah ....",["Ganjil","Genap","12","Error"],1,'angka = 12\n\nif angka % 2 == 0:\n    print("Genap")\nelse:\n    print("Ganjil")'],
+["D. Python Sederhana","Hasil yang ditampilkan program berikut adalah ....",["A lebih besar","B lebih besar","A sama dengan B","Tidak ada hasil"],1,'a = 10\nb = 20\n\nif a > b:\n    print("A lebih besar")\nelse:\n    print("B lebih besar")'],
+["E. Konten Digital","Berikut yang termasuk bentuk konten digital berupa audio adalah ....",["Poster","Podcast","Infografis","Foto"],1],
+["E. Konten Digital","Tujuan utama penggunaan infografis dalam menyampaikan informasi adalah ....",["Membuat informasi lebih sulit dipahami","Menyajikan informasi melalui kombinasi teks dan gambar secara menarik","Menghilangkan seluruh data","Menggantikan perangkat komputer"],1],
+["E. Konten Digital","Salah satu aplikasi yang dapat digunakan untuk mengedit video adalah ....",["CapCut","Calculator","Paint","File Explorer"],0],
+["E. Konten Digital","Seorang siswa membuat konten digital berupa video tutorial cara mencuci tangan. Konten tersebut termasuk jenis konten ....",["Hiburan semata","Edukasi","Promosi produk","Permainan"],1],
+["E. Konten Digital","Ketika menemukan berita yang belum jelas kebenarannya di media sosial, tindakan yang tepat adalah ....",["Langsung menyebarkannya","Mempercayainya tanpa pemeriksaan","Memeriksa sumber dan membandingkan dengan informasi terpercaya","Mengubah isi berita"],2],
+["E. Konten Digital","Mengapa kita harus mencantumkan sumber ketika menggunakan gambar atau informasi dari internet?",["Agar konten menjadi lebih panjang","Untuk menghargai hak cipta dan mengakui karya orang lain","Agar gambar terlihat lebih besar","Supaya konten dapat dihapus"],1],
+["E. Konten Digital","Sebuah kelompok membuat poster digital tentang pengurangan sampah plastik. Agar pesan mudah dipahami, hal yang perlu diperhatikan adalah ....",["Menggunakan tulisan sebanyak mungkin","Memilih gambar yang sesuai, kalimat singkat, dan informasi yang jelas","Menggunakan warna yang tidak dapat dibaca","Menghilangkan judul poster"],1],
+["E. Konten Digital","Seorang siswa mengunggah foto kegiatan sekolah ke media sosial. Sebelum mengunggahnya, hal yang perlu diperhatikan adalah ....",["Membagikan semua informasi pribadi teman","Memastikan foto layak dibagikan dan memperhatikan privasi orang yang ada di dalamnya","Menambahkan data pribadi seluruh siswa","Mengunggah tanpa memeriksa isi foto"],1]
+];
+const L="ABCD",app=document.getElementById("app");
+let i=0,sel=null,done=false,score=0,name="";
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+function start(){app.innerHTML=`<div class="c"><h1>Kuis Latihan PSAS Informatika Kelas IX</h1><p class="mu">${Q.length} soal pilihan ganda: Tree &amp; Graph, Excel, Algoritma, Python, dan Konten Digital. Setelah menekan Kirim Jawaban, kunci jawaban yang benar langsung ditampilkan.</p><input id="nm" placeholder="Nama (opsional)"><button class="b" id="go">Mulai</button></div>`;
+document.getElementById("go").onclick=()=>{name=document.getElementById("nm").value.trim();i=0;score=0;show()}}
+function show(){const q=Q[i];sel=null;done=false;
+app.innerHTML=`<div class="c"><div class="mu">Soal ${i+1} dari ${Q.length} · Skor sementara: ${score*2.5}</div><div class="bar"><i style="width:${i/Q.length*100}%"></i></div></div>
+<div class="c"><div class="sec">${esc(q[0])}</div><div class="q">${i+1}. ${esc(q[1])}</div>${q[4]?`<pre>${esc(q[4])}</pre>`:""}<div id="os">${q[2].map((t,k)=>`<button class="o" data-k="${k}"><b>${L[k]}.</b><span>${esc(t)}</span></button>`).join("")}</div><div id="fb"></div><button class="b" id="sub" disabled>Kirim Jawaban</button></div>`;
+document.querySelectorAll(".o").forEach(b=>b.onclick=()=>{if(done)return;sel=+b.dataset.k;document.querySelectorAll(".o").forEach(x=>x.classList.toggle("s",x===b));document.getElementById("sub").disabled=false});
+document.getElementById("sub").onclick=submit}
+function submit(){const q=Q[i],btn=document.getElementById("sub");
+if(!done){done=true;const ok=sel===q[3];if(ok)score++;
+document.querySelectorAll(".o").forEach((b,k)=>{b.disabled=true;b.classList.remove("s");if(k===q[3])b.classList.add("ok");else if(k===sel)b.classList.add("no")});
+document.getElementById("fb").innerHTML=`<div class="fb ${ok?"ok":"no"}">${ok?"Benar! ":"Kurang tepat. "}Jawaban yang benar: ${L[q[3]]}. ${esc(q[2][q[3]])}</div><div style="height:12px"></div>`;
+btn.textContent=i===Q.length-1?"Lihat Hasil":"Soal Berikutnya";btn.scrollIntoView({block:"nearest"})}
+else{i++;i<Q.length?(show(),window.scrollTo(0,0)):end()}}
+function end(){const n=score*2.5;app.innerHTML=`<div class="c" style="text-align:center"><h1>Hasil Kuis${name?" – "+esc(name):""}</h1><div class="big">${n}</div><p>${score} dari ${Q.length} soal benar (maksimal 100)</p><button class="b" id="re">Ulangi Kuis</button></div>`;document.getElementById("re").onclick=start}
+start();
+</script></body></html>
